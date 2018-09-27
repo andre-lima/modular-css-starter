@@ -1,0 +1,26 @@
+$text-base-size: 1em;
+$text-scale-ratio: 1.2;
+
+$font-primary: sans-serif;
+$font-secondary: serif;
+$text-xs: calc(1em / ($text-scale-ratio) * $text-scale-ratio);
+$text-sm: calc(1em / $text-scale-ratio);
+$text-md: calc(1em * $text-scale-ratio);
+$text-lg: calc(1em * $text-scale-ratio * $text-scale-ratio);
+$text-xl: calc(1em * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio);
+$text-xxl: calc(1em * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio);
+$text-xxxl: calc(1em * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio);
+
+/* line-height */
+$heading-line-height: 1.2;
+$body-line-height: 1.4;
+
+
+body {
+  font-size: $text-base-size;
+  font-family: $font-primary;
+}
+
+// html {
+//   font-size: calc(.5em + 2vw);
+// }
