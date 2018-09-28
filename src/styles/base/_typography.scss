@@ -1,26 +1,76 @@
-$text-base-size: 1em;
-$text-scale-ratio: 1.2;
+$text-base-size-mobile: 1em;
+$text-base-size: 1.25em;
+$text-scale-ratio: 1.25;
 
 $font-primary: sans-serif;
 $font-secondary: serif;
-$text-xs: calc(1em / ($text-scale-ratio) * $text-scale-ratio);
-$text-sm: calc(1em / $text-scale-ratio);
-$text-md: calc(1em * $text-scale-ratio);
-$text-lg: calc(1em * $text-scale-ratio * $text-scale-ratio);
-$text-xl: calc(1em * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio);
-$text-xxl: calc(1em * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio);
-$text-xxxl: calc(1em * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio);
+
+// Font sizes
+$text-xs: 1em / ($text-scale-ratio * $text-scale-ratio);
+$text-sm: 1em / $text-scale-ratio;
+$text-md: 1em;
+$text-lg: 1em * $text-scale-ratio;
+$text-xl: 1em * $text-scale-ratio * $text-scale-ratio;
+$text-xxl: 1em * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio;
+$text-xxxl: 1em * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio;
 
 /* line-height */
 $heading-line-height: 1.2;
 $body-line-height: 1.4;
 
 
-body {
-  font-size: $text-base-size;
+html {
+  font-size: $text-base-size-mobile;
   font-family: $font-primary;
+
+  @media (min-width: 480px) {
+    font-size: $text-base-size;
+  }
 }
 
 // html {
 //   font-size: calc(.5em + 2vw);
 // }
+
+body {
+  font-size: inherit;
+  font-family: $font-primary;
+}
+
+h1, h2, h3, h4, form legend {
+  margin-bottom: $space-xxs;
+  line-height: $heading-line-height;
+}
+
+/* text size */
+.text--xxxl {
+  font-size: $text-xxxl;
+}
+
+h1, .text--xxl {
+  font-size: $text-xxl;
+}
+
+h2, .text--xl {
+  font-size: $text-xl;
+}
+
+h3, li, .text--lg {
+  font-size: $text-lg;
+}
+
+h4, p, button, .text--md {
+  font-size: $text-md;
+}
+
+.text--sm, small {
+  font-size: $text-sm;
+}
+
+.text--xs {
+  font-size: $text-xs;
+}
+
+p {
+  line-height: $body-line-height;
+}
