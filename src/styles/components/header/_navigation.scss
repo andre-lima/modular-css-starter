@@ -1,0 +1,14 @@
+.header {
+  &-list {
+    width: 100%;
+    display: flex;
+    @include flex;
+  }
+  &-navLink {
+    text-align: center;
+    @include border(3px);
+    // @include column(1, 6, 200px);
+    @include symetric-wrap(6, 200px);
+
+  }
+}

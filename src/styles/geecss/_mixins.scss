@@ -1,0 +1,56 @@
+// Set column width, similar to a grid system, but more flexible
+@mixin symetric-wrap ($num-elements, $wrap-width) {
+  
+  min-width: auto;
+  $num-items: $num-elements;
+  $previous-num-items: -1;
+  $to-media-width: $num-items * $wrap-width;
+  $i: 1;
+
+  flex-basis: (100 / $num-items)#{"%"};
+
+  @while $num-items > 1 {
+
+    $to-media-width: $num-items * $wrap-width;
+
+    @while ($num-items == $previous-num-items) or ($num-items != round($num-items)) {
+      $i: $i + 1;
+      $num-items: $num-elements / $i;
+    }
+    
+    $previous-num-items: $num-items;
+
+    @media (max-width: $to-media-width) {
+      flex-basis: (100 / $num-items)#{"%"};
+    }
+    
+  }
+
+}
+
+@mixin column($number-of-cols: 6, $grid-cols: 12, $wrap-width: 0) {
+  $width: (floor(100 * $number-of-cols * 100/ $grid-cols) / 100)#{"%"};
+  flex-basis: $width;
+  min-width: $wrap-width;
+}
+
+@mixin flex($wrap: wrap, $direction: row) {
+  display: flex;
+  flex-wrap: $wrap;
+  flex-direction: $direction;
+}
+
+@mixin wrap-mode () {
+  //wrapped takes 100% of space
+  //wrapped keeps width
+  //only wrap pairs
+}
+
+@mixin vertical-center-children () {
+  align-items: center;
+}
+
+@mixin border($width: 1px, $color: black, $radius: 0) {
+  border: $width solid $color;
+  border-radius: $radius;
+}
