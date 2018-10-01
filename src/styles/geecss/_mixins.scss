@@ -1,36 +1,41 @@
 // Set column width, similar to a grid system, but more flexible
 @mixin symetric-wrap ($num-elements, $wrap-width) {
-  
-  min-width: auto;
-  $num-items: $num-elements;
-  $previous-num-items: -1;
-  $to-media-width: $num-items * $wrap-width;
-  $i: 1;
+  display: flex;
 
-  flex-basis: (100 / $num-items)#{"%"};
-
-  @while $num-items > 1 {
-
-    $to-media-width: $num-items * $wrap-width;
-
-    @while ($num-items == $previous-num-items) or ($num-items != round($num-items)) {
+  & > * {
+    $items-per-line: $num-elements;
+    $to-media-width: $items-per-line * $wrap-width;
+    $i: 1;
+    
+    flex-basis: (100 / $items-per-line)#{"%"};
+    
+    @while $items-per-line > 1 {
+      
+      $wrap-threshold: $items-per-line * $wrap-width;
+      
       $i: $i + 1;
-      $num-items: $num-elements / $i;
+      $items-per-line: $num-elements / $i;
+      
+      // If items-per-line is not a divisor of num-elements, recalculate items-per-line until finding a divisor
+      // ex: If num-elements is 6, items-per-line can only be 6, 3, 2 and 1
+      @while $items-per-line != round($items-per-line) {
+        $i: $i + 1;
+        $items-per-line: $num-elements / $i;
+      }
+      
+      @media (max-width: $wrap-threshold) {
+        flex-basis: (100 / $items-per-line)#{"%"};
+      }
+      
     }
-    
-    $previous-num-items: $num-items;
 
-    @media (max-width: $to-media-width) {
-      flex-basis: (100 / $num-items)#{"%"};
-    }
-    
   }
 
 }
 
-@mixin column($number-of-cols: 6, $grid-cols: 12, $wrap-width: 0) {
+@mixin grid-column($number-of-cols: 6, $grid-cols: 12, $wrap-width: auto) {
   $width: (floor(100 * $number-of-cols * 100/ $grid-cols) / 100)#{"%"};
-  flex-basis: $width;
+  width: $width;
   min-width: $wrap-width;
 }
 
