@@ -8,11 +8,12 @@
       $to-media-width: $items-per-line * $wrap-width;
       $i: 1;
       
-      flex-basis: (100 / $items-per-line)#{"%"};
+      flex-basis: (100 / ($items-per-line))#{"%"};
+      flex-grow: 1;
       
       @while $items-per-line > 1 {
         $wrap-threshold: $items-per-line * $wrap-width;
-        
+
         $i: $i + 1;
         $items-per-line: $num-elements / $i;
         
@@ -24,7 +25,7 @@
         }
         
         @media (max-width: $wrap-threshold) {
-          flex-basis: (100 / $items-per-line)#{"%"};
+          flex-basis: (100 / ($items-per-line))#{"%"};
         }
 
       }
@@ -33,6 +34,14 @@
     & > * {
       @include grid-column(1, $num-elements, $wrap-width);
     }
+  }
+}
+
+@mixin add-gap($gap: 0.5em) {
+  margin: -$gap;
+  & > * {
+    flex-shrink: 1;
+    margin: $gap;
   }
 }
 
