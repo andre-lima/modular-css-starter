@@ -1,14 +1,16 @@
 // Set column width, similar to a grid system, but more flexible
-@mixin symetric-wrap ($num-elements, $wrap-width) {
+@mixin symetric-wrap ($num-elements, $wrap-width, $gap: 0) {
+  
   display: flex;
+  @include add-gap($gap);
 
   @if is-even($num-elements) {
     & > * {
       $items-per-line: $num-elements;
-      $to-media-width: $items-per-line * $wrap-width;
       $i: 1;
       
-      flex-basis: (100 / ($items-per-line))#{"%"};
+      $item-width: (100 / $items-per-line)#{"%"};
+      flex-basis: calc(#{$item-width} - #{2 * $gap});
       flex-grow: 1;
       
       @while $items-per-line > 1 {
@@ -19,34 +21,40 @@
         
         // If items-per-line is not a divisor of num-elements, recalculate items-per-line until finding a divisor
         // ex: If num-elements is 6, items-per-line can only be 6, 3, 2 and 1
-        @while $items-per-line != round($items-per-line) {
+        @while not is-integer($items-per-line) {
           $i: $i + 1;
           $items-per-line: $num-elements / $i;
         }
         
         @media (max-width: $wrap-threshold) {
-          flex-basis: (100 / ($items-per-line))#{"%"};
+          $item-width: (100 / $items-per-line)#{"%"};
+          flex-basis: calc(#{$item-width} - #{2 * $gap});
         }
 
       }
     }
   } @else {
     & > * {
-      @include grid-column(1, $num-elements, $wrap-width);
+      @include grid-column(1, $num-elements, calc( #{$wrap-width} - #{2 * $gap}));
     }
   }
 }
 
-@mixin add-gap($gap: 0.5em) {
-  margin: -$gap;
-  & > * {
-    flex-shrink: 1;
-    margin: $gap;
+@mixin add-gap($gap: 0) {
+  @if $gap > 0 {
+    margin: -$gap;
+    
+    & > * {
+      flex-shrink: 1;
+      margin: $gap;
+    }
+
   }
 }
 
-@mixin grid-column($number-of-cols: 6, $grid-cols: 12, $wrap-width: auto) {
+@mixin grid-column($number-of-cols: 6, $grid-cols: 12, $wrap-width: auto, $grow: 1) {
   $width: (floor(100 * $number-of-cols * 100/ $grid-cols) / 100)#{"%"};
+  flex-grow: $grow;
   width: $width;
   min-width: $wrap-width;
 }
@@ -67,7 +75,7 @@
   align-items: center;
 }
 
-@mixin border($width: 1px, $color: black, $radius: 0) {
+@mixin border($width: 1px, $color: black, $radius: $default-border-radius) {
   border: $width solid $color;
   border-radius: $radius;
 }

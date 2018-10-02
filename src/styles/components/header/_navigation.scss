@@ -1,12 +1,11 @@
 .header {
   &-list {
     @include flex;
-    @include symetric-wrap(6, 200px);
-    @include add-gap(10px);
+    // @include symetric-wrap(6, 150px, 5px);
   }
   &-navLink {
     text-align: center;
-    // @include grid-column(1, 6);
+    @include grid-column(1, 6, 150px);
     @include border(3px);
   }
 }
