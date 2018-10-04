@@ -1,5 +1,5 @@
 // Set column width, similar to a grid system, but more flexible
-@mixin symetric-wrap ($num-elements, $wrap-width, $gap: 0) {
+@mixin symetric-wrap ($num-elements, $wrap-width, $gap: $default-gap-size) {
   
   display: flex;
   @include add-gap($gap);
@@ -40,7 +40,8 @@
   }
 }
 
-@mixin add-gap($gap: 0) {
+// Add gaps between child elements of a parent
+@mixin add-gap($gap: $default-gap-size) {
   @if $gap > 0 {
     margin: -$gap;
     
@@ -52,8 +53,8 @@
   }
 }
 
-@mixin grid-column($number-of-cols: 6, $grid-cols: 12, $wrap-width: auto, $grow: 1) {
-  $width: (floor(100 * $number-of-cols * 100/ $grid-cols) / 100)#{"%"};
+@mixin grid-column($element-takes, $num-of-cols: $default-grid-columns, $wrap-width: auto, $grow: 1) {
+  $width: (floor(100 * $element-takes * 100/ $num-of-cols) / 100)#{"%"};
   flex-grow: $grow;
   width: $width;
   min-width: $wrap-width;
