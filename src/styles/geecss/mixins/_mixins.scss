@@ -80,3 +80,27 @@
   border: $width solid $color;
   border-radius: $radius;
 }
+
+@mixin modal ($has-overlay: true) {
+  @at-root {
+    body/*.modal-is-open*/ {
+      overflow: hidden;
+    }
+  }
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @if $has-overlay {
+    background-color: rgba(0,0,0,0.5); // overlay
+  } @else {
+    pointer-events: none;
+  }
+  
+  > * {
+    padding: 1em;
+  }
+}

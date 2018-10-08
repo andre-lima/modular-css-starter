@@ -1,0 +1,7 @@
+.modal-alert {
+    color: white;
+    @include modal;
+    .modal-content {
+        background-color: red;
+    }
+}
