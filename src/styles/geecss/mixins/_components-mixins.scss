@@ -40,36 +40,34 @@
   }
 }
 
-// Add gaps between child elements of a parent
-@mixin add-gap($gap: $default-gap-size) {
-  @if $gap > 0 {
-    margin: -$gap;
-    
-    & > * {
-      flex-shrink: 1;
-      margin: $gap;
-    }
-
+@mixin add-icon($source-image, $color: currentColor, $width: auto, $height: auto) {
+  &:after {
+    content: url($source-image);
+    width: $width;
+    height: $height;
+    color: $color;
   }
 }
 
-@mixin grid-column($element-takes, $num-of-cols: $default-grid-columns, $wrap-width: auto, $grow: 1) {
-  $width: (floor(100 * $element-takes * 100/ $num-of-cols) / 100)#{"%"};
-  flex-grow: $grow;
-  width: $width;
-  min-width: $wrap-width;
+@mixin add-corner-icon($spacing: 0, $size: inherit, $color: currentColor) {
+  cursor: pointer; 
+  position: absolute;
+  color: $color;
+  font-size: $size;
+  padding: $spacing;
+  right: $spacing;
 }
 
-@mixin flex($wrap: wrap, $direction: row) {
-  display: flex;
-  flex-wrap: $wrap;
-  flex-direction: $direction;
-}
+
 
 @mixin wrap-mode () {
   //wrapped takes 100% of space
   //wrapped keeps width
   //only wrap pairs
+}
+
+@mixin basic-container () {
+  padding: $component-padding;
 }
 
 @mixin vertical-center-children () {
@@ -81,26 +79,29 @@
   border-radius: $radius;
 }
 
-@mixin modal ($has-overlay: true) {
+@mixin modal ($has-overlay: true, $bg-overlay: $default-modal-overlay, $modal-shadow: $default-modal-shadow, $modal-padding: $default-modal-padding) {
+
   @at-root {
     body/*.modal-is-open*/ {
       overflow: hidden;
     }
   }
+  
+  font-size: inherit;
   position: fixed;
   width: 100vw;
   height: 100vh;
   top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex;
+
   @if $has-overlay {
-    background-color: rgba(0,0,0,0.5); // overlay
+    background-color: $default-modal-overlay;
   } @else {
     pointer-events: none;
   }
   
-  > * {
-    padding: 1em;
+  > * { // Modal content
+    padding: $default-modal-padding;
+    box-shadow: $default-modal-shadow;
   }
 }

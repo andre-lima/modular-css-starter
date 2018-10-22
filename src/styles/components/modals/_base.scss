@@ -1,7 +1,9 @@
 .modal-alert {
-    color: white;
     @include modal;
-    .modal-content {
-        background-color: red;
-    }
+}
+
+.modal-content {
+    background-color: white;
+    // @include basic-container;
+    // @include offset-element(false, 10px, 10px);
 }

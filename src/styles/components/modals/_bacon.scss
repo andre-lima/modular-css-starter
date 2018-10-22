@@ -1,0 +1,100 @@
+
+
+.card {
+  max-width: 500px;
+  flex: 0 1 calc(320px + 30vw);
+  background-color: #fff;
+  
+  &-header {
+    background-color: #1a1a1a;
+    color: #fff;
+    line-height: $heading-line-height;
+    padding: $space-xxs;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    //text-align: center;
+    position: relative;
+    font-size: $text-xl;
+  }
+    
+  &-title {
+    font-size: $text-md;
+    margin-bottom: 0;
+  }
+  
+  &-close-icon {
+    @include add-corner-icon($space-xs, $text-xs, white);
+    font-weight: 300;
+  }
+  
+  &-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+  &-photo {
+    flex: 1 0 150px;
+    min-height: 150px;
+    background: url(https://baconmockup.com/500/500);
+    background-repeat: no-repeat;
+    background-size: cover;
+    img {
+      border-radius: $space-sm;  
+    }
+    
+    &-cage {
+      background: url(https://placecage.com/420/460);
+      background-size: cover;
+      background-position: center;
+    }
+  }
+  
+  &-information {
+    flex: 1 1 300px;
+    padding: $space-sm;
+    font-size: $text-sm;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  &-subtitle {
+    text-transform: uppercase;
+    margin: 0 0 $space-xs;
+    font-size: $text-lg;
+  }
+  
+  &-description {
+    flex-grow: 1;
+  }
+  
+  &-footer {
+    background-color: #eee;
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+  &-button {
+    flex: 1 0 150px;
+    font-size: $text-md;
+    text-align: center;
+    font-weight: light;
+    padding: $space-xxs;
+    margin: $space-xs;
+    border-radius: $text-md;
+    background-color: #fff;
+    color: #fff;
+    cursor: pointer;
+    
+    &-success {
+      background-color: #78A830;
+    }
+    &-error {
+      background-color: #D84830;
+    }
+    &-alert {
+      background-color: #F0A800;
+    }
+  }
+}

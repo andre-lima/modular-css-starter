@@ -1,0 +1,11 @@
+@mixin offset-element($is_absolute: false, $top: 0, $left: 0) {
+    
+    @if ($is_absolute) {
+        position: absolute;
+    } @else {
+        position: relative;
+    }
+
+    top: $top;
+    left: $left;
+}
