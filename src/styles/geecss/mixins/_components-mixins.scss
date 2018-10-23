@@ -82,9 +82,13 @@
 @mixin modal ($has-overlay: true, $bg-overlay: $default-modal-overlay, $modal-shadow: $default-modal-shadow, $modal-padding: $default-modal-padding) {
 
   @at-root {
-    body/*.modal-is-open*/ {
+    body.#{$default-modal-open-class} {
       overflow: hidden;
     }
+  }
+
+  &:not(.#{$default-modal-open-class}) {
+    display: none;
   }
   
   font-size: inherit;

@@ -33,21 +33,18 @@
     flex-wrap: wrap;
     align-items: stretch;
   }
+
   &-photo {
     flex: 1 0 150px;
     min-height: 150px;
     background: url(https://baconmockup.com/500/500);
     background-repeat: no-repeat;
     background-size: cover;
+    
     img {
       border-radius: $space-sm;  
     }
-    
-    &-cage {
-      background: url(https://placecage.com/420/460);
-      background-size: cover;
-      background-position: center;
-    }
+  
   }
   
   &-information {
