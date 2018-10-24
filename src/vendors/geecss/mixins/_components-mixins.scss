@@ -96,7 +96,7 @@
   width: 100vw;
   height: 100vh;
   top: 0;
-  @include flex;
+  @include flex(center, center);
 
   @if $has-overlay {
     background-color: $default-modal-overlay;

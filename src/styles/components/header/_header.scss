@@ -1,7 +1,11 @@
+// Base block styles
+
 .header {
-  background-color: wheat;
+
   &-title {
     background-color: #222;
+    padding: $space-sm;
     color: white;
   }
+
 }

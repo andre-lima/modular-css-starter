@@ -18,10 +18,15 @@
     min-width: $wrap-width;
   }
   
-  @mixin flex($wrap: wrap, $direction-alignment: center, $perpendicular-alignment: center, $direction: row) {
+  @mixin flex($direction-alignment: null, $perpendicular-alignment: null, $wrap: wrap, $direction: null, $child-grow: null) {
     display: flex;
     flex-wrap: $wrap;
     justify-content: $direction-alignment;
     align-items: $perpendicular-alignment;
     flex-direction: $direction;
+
+    & > * {
+      flex-grow: $child-grow;
+    }
+
   }
