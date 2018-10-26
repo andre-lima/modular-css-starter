@@ -34,7 +34,7 @@
 
 .subMenu {
   display: none;
-  position: absolute;
+  @include absolute($left: 25px);
   width: 100%;
   z-index: 999999;
   background-color: #111;
@@ -43,4 +43,5 @@
   & > li {
     padding: $space-xxs;
   }
+  
 }

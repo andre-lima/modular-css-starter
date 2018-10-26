@@ -55,8 +55,8 @@
 }
 
 @mixin add-corner-icon($spacing: 0, $size: inherit, $color: currentColor) {
+  @include absolute;
   cursor: pointer; 
-  position: absolute;
   color: $color;
   font-size: $size;
   padding: $spacing;
