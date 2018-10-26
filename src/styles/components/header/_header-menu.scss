@@ -1,0 +1,24 @@
+.header-menu {
+  margin: $space-xxs 0;
+}
+
+.header-menuLinks {
+  @include flex;
+  // @include symetric-wrap(6, 150px, 5px);
+
+  & > li {
+    text-align: center;
+    flex-basis: 150px;
+    // @include border(3px);
+    // @include grid-column(1, 5, 150px);
+
+    @media (max-width: $screen-tablet - 1) {
+      // Trigger hamburger menu
+    }
+  }
+
+}
+
+.header-link_alignedRight {
+  margin-left: auto;
+}
