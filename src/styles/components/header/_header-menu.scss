@@ -22,3 +22,25 @@
 .header-link_alignedRight {
   margin-left: auto;
 }
+
+.header-link_hasSubMenu {
+  position: relative;
+  &:hover {
+    & > ul {
+      display: block;
+    }
+  }
+}
+
+.subMenu {
+  display: none;
+  position: absolute;
+  width: 100%;
+  z-index: 999999;
+  background-color: #111;
+  color: #eee;
+
+  & > li {
+    padding: $space-xxs;
+  }
+}

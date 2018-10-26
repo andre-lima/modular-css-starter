@@ -49,6 +49,11 @@
   }
 }
 
+@mixin backboard($color: #fff, $opacity: 0.5, $box-padding: 1em) {
+  background-color: rgba($color, $opacity);
+  padding: $box-padding;
+}
+
 @mixin add-corner-icon($spacing: 0, $size: inherit, $color: currentColor) {
   cursor: pointer; 
   position: absolute;
