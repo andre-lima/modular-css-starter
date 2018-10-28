@@ -84,6 +84,16 @@
   border-radius: $radius;
 }
 
+@mixin round {
+  border-radius: 50%;
+}
+
+@mixin panel ($bg-color: #fff) {
+  & > *:first-child {
+    background-color: $bg-color;
+  }
+}
+
 @mixin modal ($has-overlay: true, $bg-overlay: $default-modal-overlay, $modal-shadow: $default-modal-shadow, $modal-padding: $default-modal-padding) {
 
   @at-root {

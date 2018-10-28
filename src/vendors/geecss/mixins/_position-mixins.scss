@@ -29,3 +29,20 @@
 @mixin z-index($arg) {
   z-index: z($arg);
 }
+
+@mixin flex($direction-alignment: null, $perpendicular-alignment: null, $wrap: wrap, $direction: null, $child-grow: null) {
+  display: flex;
+  flex-wrap: $wrap;
+  justify-content: $direction-alignment;
+  align-items: $perpendicular-alignment;
+  flex-direction: $direction;
+
+  & > * {
+    flex-grow: $child-grow;
+  }
+
+}
+
+@mixin equal-height() {
+  // Create mixin
+}
