@@ -3,9 +3,8 @@
 .header {
 
   &-title {
-    background-color: #222;
+    @include colors($text-color: $white, $bg-color: $bg-header);
     padding: $space-sm;
-    color: white;
   }
 
 }

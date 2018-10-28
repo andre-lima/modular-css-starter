@@ -2,7 +2,6 @@
     @include colors($text-color: $white, $bg-color: $bg-footer);
     @include flex($perpendicular-alignment: center, $direction: column, $child-grow: 1);
     @include basic-container;
-    margin-top: 20px;
 
     & > * {
         padding: $space-xs;
@@ -30,10 +29,17 @@
     }
 }
 
+.footer-division {
+    width: 100%;
+    padding: $space-xs;
+    border-bottom: 1px solid $gray;
+}
+
 .footer-links {
     @extend %flex-ul;
     li {
         padding: $space-xxs;
+        font-size: $text-sm;
     }
 }
 

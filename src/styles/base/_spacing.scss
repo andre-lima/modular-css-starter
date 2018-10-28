@@ -11,6 +11,9 @@ $space-xxl:  5.25 * $space-unit;
 /* components padding */
 $component-padding: $space-sm;
 
+/* distance between components */
+$components-bottom-spacing: $space-md;
+
 /* fixed values - not affected by $space-unit or $text-base-size */
 $space-unit-fixed: 1rem;
 $space-xxs-fixed:  0.25 * $space-unit-fixed;

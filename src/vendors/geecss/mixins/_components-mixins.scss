@@ -85,12 +85,17 @@
 }
 
 @mixin round {
-  border-radius: 50%;
+  border-radius: 5em;
 }
 
-@mixin panel ($bg-color: #fff) {
+// A panel has a title (first-child) and a content (:not(:first-child))
+@mixin panel ($bg-color: $default-panel-bg-color, $spacing: 0.75em) {
   & > *:first-child {
     background-color: $bg-color;
+    padding: $spacing;
+  }
+  & > *:not(:first-child) {
+    padding: $spacing;
   }
 }
 

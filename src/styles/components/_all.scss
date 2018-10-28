@@ -2,11 +2,18 @@
 @import "header/header-menu";
 @import "header/header-carousel";
 
+@import "pages/homepage";
+
+@import "footer/footer";
+
+@import "purchase/purchase";
+@import "purchase/product";
+
 @import "modals/base";
 @import "modals/bacon";
 
-button, input, select, textarea, div, article, section, ul, li, p {
-  color: currentColor;
-  font-family: inherit;
-}
+// button, input, select, textarea, div, article, section, ul, li, p {
+//   color: currentColor;
+//   font-family: inherit;
+// }
 

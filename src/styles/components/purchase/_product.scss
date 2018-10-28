@@ -1,0 +1,41 @@
+.productsCarousel {
+    @include flex;
+    & > * {
+        flex-basis: 300px;
+        flex-grow: 1;
+    }
+}
+
+.product {
+    margin: $space-xxs;
+    padding: $space-xs;
+    @include add-gap;
+    @include colors($bg-color: $silver);
+    @include flex($direction: column, $direction-alignment: space-between);
+}
+
+.product-text {
+
+}
+
+.product-title {
+    font-size: $text-lg
+}
+
+.product-description {
+    margin: $space-xs 0;
+}
+
+.product-buySection {
+    @include flex ($direction-alignment: flex-end, $perpendicular-alignment: center);
+}
+
+.product-price {
+    font-size: $text-lg;
+    font-weight: bold;
+    margin: $space-xs-fixed 0;
+}
+
+.product-buyButton {
+    margin-left: $space-sm-fixed;
+}

@@ -1,0 +1,14 @@
+.pageContent {
+    @include flex($child-grow: 1);
+    @include push-next-down;
+}
+
+.mainContent {
+    flex-basis: 1400px;
+    @include basic-container;
+}
+
+.sideContent {
+    flex-basis: 300px;
+    @include basic-container;
+}

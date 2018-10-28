@@ -1,0 +1,5 @@
+.purchase_homePage {
+    @include panel ($bg-color: $teal, $spacing: $space-xs);
+    @include border ($radius: 0);
+    @include push-next-down;
+}
