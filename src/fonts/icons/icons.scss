@@ -1,14 +1,13 @@
 @font-face {
   font-family: 'icons';
   src:
-    url('../fonts/icons/icons.ttf?u9zwp1') format('truetype'),
-    url('../fonts/icons/icons.woff?u9zwp1') format('woff'),
-    url('../fonts/icons/icons.svg?u9zwp1#icons') format('svg');
+    url('../fonts/icons/fonts/icons.ttf?u9zwp1') format('truetype'),
+    url('../fonts/icons/fonts/icons.woff?u9zwp1') format('woff'),
+    url('../fonts/icons/fonts/icons.svg?u9zwp1#icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
-
-.icon, [class*="icon-"] {
+[class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icons' !important;
   speak: none;
@@ -50,6 +49,9 @@
 .icon-folder:before {
   content: "\e92f";
 }
+.icon-folder-open:before {
+  content: "\e930";
+}
 .icon-cart:before {
   content: "\e93a";
 }
@@ -89,6 +91,12 @@
 .icon-power:before {
   content: "\e9b5";
 }
+.icon-menu3:before {
+  content: "\e9bf";
+}
+.icon-menu4:before {
+  content: "\e9c0";
+}
 .icon-earth:before {
   content: "\e9ca";
 }
@@ -109,6 +117,9 @@
 }
 .icon-checkmark2:before {
   content: "\ea11";
+}
+.icon-ctrl:before {
+  content: "\ea50";
 }
 .icon-radio-checked:before {
   content: "\ea54";
