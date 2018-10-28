@@ -5,3 +5,38 @@
 @function is-integer($num) {
   @return $num == round($num);
 }
+
+@function is-number($value) {
+  @return type-of($value) == 'number';
+}
+
+@function z($key-or-value: null) {
+
+  $zindex: () !default;
+
+  @if ($key-or-value == null) {
+      @warn "You have to pass a key or a number value as the function parameter. (Ignoring property!)";
+
+  } @else {
+
+      @if is-number($key-or-value) {
+          @return $key-or-value;
+      }
+
+      @if ($zindex == ()) {
+          @warn "Create a map variable called $zindex with key/pair values: $zindex: (modal: 9000, overlay: 8000, dropdown: 7000, header: 6000, footer: 5000). (Ignoring property!)";
+
+      } @else {
+
+          @if map-has-key($zindex, $key-or-value) {
+              @return map-get($zindex,$key-or-value);
+          } @else {
+              @warn "Key " + $key-or-value + "does not exist on map. Use one of these keys: " + map-keys($map: $zindex) + ". (Ignoring property!)";
+          }
+
+      }
+
+  }
+
+  @return null;
+}

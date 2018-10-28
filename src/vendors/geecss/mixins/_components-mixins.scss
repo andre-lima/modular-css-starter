@@ -96,12 +96,13 @@
     display: none;
   }
   
+  @include fixed($top: 0);
+  @include flex(center, center);
+  @include z-index(modal);
+  
   font-size: inherit;
-  position: fixed;
   width: 100vw;
   height: 100vh;
-  top: 0;
-  @include flex(center, center);
 
   @if $has-overlay {
     background-color: $default-modal-overlay;
@@ -109,7 +110,7 @@
     pointer-events: none;
   }
   
-  > * { // Modal content
+  & > * { // Modal content
     padding: $default-modal-padding;
     box-shadow: $default-modal-shadow;
   }

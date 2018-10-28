@@ -33,15 +33,17 @@
 }
 
 .subMenu {
-  display: none;
   @include absolute($left: 25px);
-  width: 100%;
-  z-index: 999999;
-  background-color: #111;
-  color: #eee;
+  @include colors(#eee, #111);
+  @include z-index(dropdown);
+  
+  display: none;
 
   & > li {
-    padding: $space-xxs;
+    padding: $space-xxs $space-md;
+    & > * {
+      display: block;
+    }
   }
   
 }

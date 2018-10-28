@@ -9,3 +9,12 @@ $default-modal-shadow: 2px 2px 5px rgba(0,0,0,0.6);
 $default-modal-class: "modal";
 $default-modal-open-class: "modal-is-open";
 $default-modal-content-class: "modal-content";
+
+// z-index
+$zindex: (
+  modal     : 9000, 
+  overlay   : 8000,
+  dropdown  : 7000,
+  header    : 6000,
+  footer    : 5000
+);
