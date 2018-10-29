@@ -26,6 +26,13 @@
   @include position(fixed, $args...);
 }
 
+@mixin center-block {
+  margin: { 
+    left: auto;
+    right: auto;
+  }
+}
+
 @mixin z-index($arg) {
   z-index: z($arg);
 }
