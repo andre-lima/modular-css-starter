@@ -26,7 +26,7 @@
           $items-per-line: $num-elements / $i;
         }
         
-        @media (max-width: $wrap-threshold) {
+        @include mq($wrap-threshold, max) {
           $item-width: (100 / $items-per-line)#{"%"};
           flex-basis: calc(#{$item-width} - #{2 * $gap});
         }

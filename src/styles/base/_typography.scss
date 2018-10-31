@@ -43,9 +43,10 @@ html {
   font-size: $text-base-size-mobile;
   font-family: $font-primary;
 
-  @media (min-width: $screen-phone) {
+  @include mq(phone) {
     font-size: $text-base-size;
   }
+  
 }
 
 // html {

@@ -12,7 +12,7 @@
     // @include border(3px);
     // @include grid-column(1, 5, 150px);
 
-    @media (max-width: $screen-tablet - 1) {
+    @include mq(tablet, max) {
       // Trigger hamburger menu
     }
   }
@@ -20,7 +20,9 @@
 }
 
 .header-link_alignedRight {
-  margin-left: auto;
+  @include mq(desktop) {
+    margin-left: auto;
+  }
 }
 
 .header-link_hasSubMenu {
