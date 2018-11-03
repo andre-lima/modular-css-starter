@@ -1,0 +1,18 @@
+@mixin button ($type-or-value: regular, $padding-proportion: 0.5) {
+    @if (is-number($type-or-value)) {
+        padding: ($type-or-value * $padding-proportion) + px $type-or-value + px;
+    } @else {
+        padding: map-get($map: $button-sizes, $key: padding);
+        font-size: map-get($map: $button-sizes, $key: $type-or-value);
+    }
+
+    border: none;
+
+    &:hover {
+        
+    }
+
+    &:active {
+
+    }
+}

@@ -1,0 +1,10 @@
+// Button variables
+$button-sizes: (
+    "regular" :  $text-sm,
+    "large"   :  $text-md,
+    "small"   :  $text-xs,
+    "padding" :  $space-xs $space-md // Since we're using ems, we only need one variable for padding, since the text size will drive the actual padding values.
+);
+
+$default-button-color: #fff;
+$default-button-bg: #000;
