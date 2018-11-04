@@ -1,4 +1,6 @@
+// -------------------------------------
 // Basic components
+// -------------------------------------
 .stylesheet {
     @include basic-container ($padding: 0, $distance-from-sibling: $space-md);
 } 
@@ -9,7 +11,7 @@
 
 .panelTitle {
     @include colors(#999, #333);
-    font-family: 'Gochi Hand', cursive;
+    font-family: 'Bitter', cursive;
     width: 100%;
     padding: $space-xs;
     border-bottom: make-border(1px, #aaa);
@@ -20,7 +22,13 @@
     @include flex($jc: space-around, $ai: center);
 }
 
+// -------------------------------------
+// Typography
+// -------------------------------------
+
+// -------------------------------------
 // Buttons
+// -------------------------------------
 .button {
     & {
         @include button;
@@ -46,14 +54,18 @@
     }
 }
 
+// -------------------------------------
 //Container
+// -------------------------------------
 .basicContainer {
     @include basic-container ($distance-from-sibling: $space-xs) {
         @include border($radius: 0);
     }
 }
 
+// -------------------------------------
 // Menu navigation
+// -------------------------------------
 .menu {
     @include menu ($item-width: 200px);
 }
@@ -78,7 +90,9 @@
     @include colors(#fff, #333);
 }
 
+// -------------------------------------
 // Widget and Arrow
+// -------------------------------------
 .widget {
     margin-top: 15px;
     @include arrow('top','center', 10px, #000);
@@ -88,7 +102,9 @@
     @include arrow-mask;
 }
 
+// -------------------------------------
 // Carousel
+// -------------------------------------
 .carousel {
     @include carousel("http://placekitten.com/1050/240") {
         @include flex(flex-start, center);
@@ -106,17 +122,19 @@
     @include button ($size: regular, $style: alert);
 }
 
+// -------------------------------------
+// Modal
+// -------------------------------------
+.testModal {
+    @include modal($has-overlay: true, $max-width: 500px, $modal-padding: $space-md) {
+        @include basic-container ($padding: null, $distance-from-sibling: $space-xs);
+    }
+}
 
+.modal-openButton {
+    @include button ($size: large, $style: info);
+}
 
-// <div class="container">
-// <div class="panelTitle">Carousel</div>
-// <div class="panelItems">
-//   <div class="carousel">
-//     <div class="carousel-heroImage">
-//       <div class="carousel-title">
-//         <p>Simply, the best slogan ever!</p>
-//       </div>
-//     </div>
-//   </div>
-// </div>
-// </div>
+.modal-closeButton {
+    @include button ($size: regular, $style: warning);
+}

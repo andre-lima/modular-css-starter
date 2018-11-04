@@ -1,5 +1,5 @@
 
-@mixin modal ($has-overlay: true, $bg-overlay: $default-modal-overlay, $modal-shadow: $default-modal-shadow, $modal-padding: $default-modal-padding) {
+@mixin modal ($has-overlay: true, $max-width: null, $bg-overlay: $default-modal-overlay, $modal-shadow: $default-modal-shadow, $modal-padding: $default-modal-padding) {
 
     @at-root {
       body.#{$default-modal-open-class} {
@@ -25,8 +25,12 @@
       pointer-events: none;
     }
     
-    & > * { // Modal content
-      padding: $default-modal-padding;
+    // Modal content
+    & > * {
+      max-width: $max-width;
+      padding: $modal-padding;
       box-shadow: $default-modal-shadow;
+      @content;
     }
+
   }
