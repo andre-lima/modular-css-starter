@@ -1,10 +1,31 @@
 // Button variables
-$button-sizes: (
-    "regular" :  $text-sm,
-    "large"   :  $text-md,
-    "small"   :  $text-xs,
-    "padding" :  $space-xs $space-md // Since we're using ems, we only need one variable for padding, since the text size will drive the actual padding values.
-);
+$button-regular-color : #000000 !default;
+$button-regular-bg    : #dddddd !default;
+$button-info-color    : #000000 !default;
+$button-info-bg       : #7fdbff !default;
+$button-alert-color   : #ffffff !default;
+$button-alert-bg      : #ff4136 !default;
+$button-warning-color : #000000 !default;
+$button-warning-bg    : #ffdc00 !default;
 
-$default-button-color: #fff;
-$default-button-bg: #000;
+$button-sizes: (
+    "regular" :  $text-md,
+    "large"   :  $text-xl,
+    "small"   :  $text-xs,
+    "padding" :  $space-xxs $space-md // Since we're using ems, we only need one variable for padding, since the text size will drive the actual padding values.
+) !default;
+
+$button-colors: (
+    "regular" :  ($button-regular-color $button-regular-bg),
+    "info"    :  ($button-info-color $button-info-bg),
+    "alert"   :  ($button-alert-color $button-alert-bg),
+    "warning" :  ($button-warning-color $button-warning-bg)
+) !default;
+
+// Links variables
+
+
+// Menu variables
+
+
+

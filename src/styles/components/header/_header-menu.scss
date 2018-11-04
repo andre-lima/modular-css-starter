@@ -3,19 +3,20 @@
 }
 
 .header-menuLinks {
-  @include flex;
-  // @include symetric-wrap(6, 150px, 5px);
+  @include menu;
+  // @include flex;
+  // // @include symetric-wrap(6, 150px, 5px);
 
-  & > li {
-    text-align: center;
-    flex-basis: 150px;
-    // @include border(3px);
-    // @include grid-column(1, 5, 150px);
+  // & > li {
+  //   text-align: center;
+  //   flex-basis: 150px;
+  //   // @include border(3px);
+  //   // @include grid-column(1, 5, 150px);
 
-    @include mq(tablet, max) {
-      // Trigger hamburger menu
-    }
-  }
+  //   @include mq(tablet, max) {
+  //     // Trigger hamburger menu
+  //   }
+  // }
 
 }
 
@@ -26,26 +27,27 @@
 }
 
 .header-link_hasSubMenu {
-  position: relative;
-  &:hover {
-    & > ul {
-      display: block;
-    }
-  }
+  // position: relative;
+  // &:hover {
+  //   & > ul {
+  //     display: block;
+  //   }
+  // }
+  @include has-dropdown();
 }
 
 .subMenu {
-  @include absolute($left: 25px);
-  @include colors(#eee, #111);
-  @include z-index(dropdown);
+  // @include absolute($left: 25px);
+  // @include colors(#eee, #111);
+  // @include z-index(dropdown);
   
-  display: none;
+  // display: none;
 
-  & > li {
-    padding: $space-xxs $space-md;
-    & > * {
-      display: block;
-    }
-  }
+  // & > li {
+  //   padding: $space-xxs $space-md;
+  //   & > * {
+  //     display: block;
+  //   }
+  // }
   
 }

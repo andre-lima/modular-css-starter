@@ -41,11 +41,11 @@
   margin-bottom: $spacing-bottom;
 }
 
-@mixin flex($direction-alignment: null, $perpendicular-alignment: null, $wrap: wrap, $direction: null, $child-grow: null) {
+@mixin flex($jc: null, $ai: null, $wrap: wrap, $direction: null, $child-grow: null) {
   display: flex;
   flex-wrap: $wrap;
-  justify-content: $direction-alignment;
-  align-items: $perpendicular-alignment;
+  justify-content: $jc;
+  align-items: $ai;
   flex-direction: $direction;
 
   & > * {

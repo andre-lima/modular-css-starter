@@ -11,7 +11,7 @@
     padding: $space-xs;
     @include add-gap;
     @include colors($bg-color: $silver);
-    @include flex($direction: column, $direction-alignment: space-between);
+    @include flex($direction: column, $jc: space-between);
 }
 
 .product-text {
@@ -27,7 +27,7 @@
 }
 
 .product-buySection {
-    @include flex ($direction-alignment: flex-end, $perpendicular-alignment: center);
+    @include flex ($jc: flex-end, $ai: center);
 }
 
 .product-price {

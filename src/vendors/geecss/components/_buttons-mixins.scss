@@ -1,18 +1,25 @@
-@mixin button ($type-or-value: regular, $padding-proportion: 0.5) {
-    @if (is-number($type-or-value)) {
-        padding: ($type-or-value * $padding-proportion) + px $type-or-value + px;
-    } @else {
-        padding: map-get($map: $button-sizes, $key: padding);
-        font-size: map-get($map: $button-sizes, $key: $type-or-value);
+@mixin button ($size: regular, $style: regular, $hover-darken: 10%, $active-darken: 20%) {
+
+    cursor: pointer;
+    
+    @if (map-has-key($map: $button-sizes, $key: $size)) {
+        padding: map-get($map: $button-sizes, $key: "padding");
+        font-size: map-get($map: $button-sizes, $key: $size);
     }
 
-    border: none;
-
-    &:hover {
+    @if (map-has-key($map: $button-colors, $key: $style)) {
+        $color: nth(map-get($map: $button-colors, $key: $style), 1);
+        $bg-color: nth(map-get($map: $button-colors, $key: $style), 2);
         
-    }
-
-    &:active {
-
+        color: $color;
+        background-color: $bg-color;
+        
+        &:hover {
+            background-color: darken($bg-color, $hover-darken);
+        }
+        
+        &:active {
+            background-color: darken($bg-color, $active-darken);
+        }
     }
 }

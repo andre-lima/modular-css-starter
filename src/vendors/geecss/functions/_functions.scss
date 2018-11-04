@@ -45,3 +45,7 @@
 
   @return null;
 }
+
+@function make-border ($width: 1px, $color: black, $type: solid) {
+    @return $width $type $color;
+}
