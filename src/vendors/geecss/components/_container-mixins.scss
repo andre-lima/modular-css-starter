@@ -1,0 +1,9 @@
+@mixin basic-container ($padding: $component-padding, $distance-from-sibling: $space-xs) {
+  padding: $padding;
+  
+  & > *:not(:last-child) {
+    margin-bottom: $distance-from-sibling;
+  }
+
+  @content;
+}

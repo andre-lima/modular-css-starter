@@ -1,20 +1,23 @@
 // Basic components
+.stylesheet {
+    @include basic-container ($padding: 0, $distance-from-sibling: $space-md);
+} 
+
 .container {
-    margin: $space-xs;
+    @include basic-container ($padding: $space-xs, $distance-from-sibling: $space-xs);
 }
 
 .panelTitle {
     @include colors(#999, #333);
+    font-family: 'Gochi Hand', cursive;
     width: 100%;
-    padding: $space-xxs;
+    padding: $space-xs;
     border-bottom: make-border(1px, #aaa);
 }
 
 .panelItems {
+    @include basic-container ($padding: $space-xxs, $distance-from-sibling: 0);
     @include flex($jc: space-around, $ai: center);
-    & > * {
-        margin: $space-xs 0;
-    }
 }
 
 // Buttons
@@ -43,6 +46,13 @@
     }
 }
 
+//Container
+.basicContainer {
+    @include basic-container ($distance-from-sibling: $space-xs) {
+        @include border($radius: 0);
+    }
+}
+
 // Menu navigation
 .menu {
     @include menu ($item-width: 200px);
@@ -68,6 +78,7 @@
     @include colors(#fff, #333);
 }
 
+// Widget and Arrow
 .widget {
     margin-top: 15px;
     @include arrow('top','center', 10px, #000);
@@ -77,3 +88,35 @@
     @include arrow-mask;
 }
 
+// Carousel
+.carousel {
+    @include carousel("http://placekitten.com/1050/240") {
+        @include flex(flex-start, center);
+    }
+}
+
+.carousel-title {
+    @include basic-container ($distance-from-sibling: $space-md) {
+        @include backboard;
+    }
+    margin: $space-lg;
+}
+
+.button-cta {
+    @include button ($size: regular, $style: alert);
+}
+
+
+
+// <div class="container">
+// <div class="panelTitle">Carousel</div>
+// <div class="panelItems">
+//   <div class="carousel">
+//     <div class="carousel-heroImage">
+//       <div class="carousel-title">
+//         <p>Simply, the best slogan ever!</p>
+//       </div>
+//     </div>
+//   </div>
+// </div>
+// </div>

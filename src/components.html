@@ -15,7 +15,7 @@
   <title>Simple Page</title>
 </head>
 
-<body>
+<body class="stylesheet">
 
   <div class="container">
     <div class="panelTitle">Buttons</div>
@@ -34,6 +34,19 @@
     <div class="panelTitle">Links</div>
     <div class="panelItems">
       <a href="#" class="link">click me</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="panelTitle">Container</div>
+    <div class="panelItems">
+      <div class="basicContainer">
+        <h1>These items</h1>
+        <p>have bottom margins</p>
+        <p>for spacing purposes!</p>
+        <p>Cool, right?</p>
+        <button class="button">Riiiiight...</button>
+      </div>
     </div>
   </div>
 
@@ -62,7 +75,7 @@
       <div class="item_hasWidget">
         <span>Arrow Widget</span>
         <div class="widget">
-          <img class="dropdownImage" src="http://placekitten.com/250/230" alt="cat">
+          <img class="dropdownImage" src="http://placekitten.com/280/230" alt="cat">
         </div>
       </div>
       <div class="item_hasWidget">
@@ -75,18 +88,35 @@
   </div>
 
   <div class="container">
-    <div class="panelTitle">Carousel</div>
+    <div class="panelTitle">Carousel with Container</div>
     <div class="panelItems">
-      CAROUSEL
+      <div class="carousel">
+        <div class="carousel-title">
+          <p>Simply, the best slogan ever!</p>
+          <button class="button-cta">Buy stuff</button>
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="container">
     <div class="panelTitle">Modal</div>
     <div class="panelItems">
-      MODAL
+        <button class="button-cta">Open modal</button>
     </div>
   </div>
+
+  <section class="modal">
+      <div class="modal-content">
+        <div class="modal-content">
+          <h1 class="modal-title">Let's eat beican!</h1>
+          <p class="modal-description">Salami incididunt eiusmod sunt ham hock ball tip. Jerky bresaola ball tip flank
+              porchetta doner quis drumstick lorem magna baconzitos spare ribs mollit aute commodo. Alcatra esse short
+              ribs, picanha salami officia gato frito elit sausage velit.</p>
+        </div>
+      </div>
+      
+    </section>
 
   <script src="scripts/index.js"></script>
 </body>

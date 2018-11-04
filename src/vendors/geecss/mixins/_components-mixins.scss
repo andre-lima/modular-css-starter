@@ -71,10 +71,6 @@
   //only wrap pairs
 }
 
-@mixin basic-container () {
-  padding: $component-padding;
-}
-
 @mixin vertical-center-children () {
   align-items: center;
 }

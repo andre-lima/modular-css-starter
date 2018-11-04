@@ -1,6 +1,6 @@
 const body = document.body;
 
-// Open modal with space bar
+// Open modal by pressing O
 const modal = document.querySelector('.modal');
 body.addEventListener("keyup", (event) => {
     if (event.key === 'o') {
