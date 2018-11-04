@@ -1,0 +1,74 @@
+// Basic components
+.container {
+    margin: $space-xs;
+}
+
+.panelTitle {
+    width: 100%;
+    padding: $space-xxs;
+    @include colors(white, #333);
+    border-bottom: make-border(1px, #aaa);
+}
+
+.panelItems {
+    @include flex($jc: space-around, $ai: center);
+    & > * {
+        margin: $space-xs 0;
+    }
+}
+
+// Buttons
+.button {
+    & {
+        @include button;
+    }
+    &-large {
+        @include button ($size: large);
+    }
+    &-small {
+        @include button ($size: small);
+    }
+    &-round {
+        @include round;
+        @include button;
+    }
+    &_info {
+        @include button ($style: info);
+    }
+    &_alert {
+        @include button ($style: alert);
+    }
+    &_warning {
+        @include button ($style: warning);
+    }
+}
+
+// Menu navigation
+.menu {
+    @include menu ($item-width: 200px);
+}
+
+.item_hasDropdown {
+    @include has-dropdown();
+
+    span {
+        font-style: italic;
+    }
+}
+
+.item_hasWidget {
+    @include has-dropdown($horizontally-center-dropdown: true);
+
+    span {
+        font-style: italic;
+    }
+}
+
+.dropdown {
+    @include colors(#fff, #333);
+}
+
+.widget {
+    margin-top: 20px;
+    @include arrow('top','center', 10px, #000)
+}

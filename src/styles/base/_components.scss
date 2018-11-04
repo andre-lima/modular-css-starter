@@ -1,15 +1,1 @@
-a {
-    color: inherit;
-    text-decoration: none;
-    &:visited {
-        color: inherit;
-    }
-}
 
-button {
-    @include round;
-}
-
-// .modal {
-
-// }
