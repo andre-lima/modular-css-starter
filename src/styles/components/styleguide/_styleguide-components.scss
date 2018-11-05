@@ -1,7 +1,7 @@
 // -------------------------------------
 // Basic components
 // -------------------------------------
-.stylesheet {
+.styleguide {
     @include basic-container ($padding: 0, $distance-from-sibling: $space-md);
 } 
 
@@ -84,15 +84,13 @@
 }
 
 .dropdown {
-    @include colors(#fff, #333);
+    @include basic-container;
+    @include colors(#fff, #111);
 }
 
 // -------------------------------------
 // Widget and Arrow
 // -------------------------------------
-.widgets {
-    // @include flex ($jc: center, $ai: center);
-}
 .item_hasWidget {
     display: inline-block;
     margin: 0 $space-xl;
