@@ -4,11 +4,12 @@
 }
 
 .mainContent {
-    flex-basis: 1400px;
+    flex-basis: 1000px;
+    flex-grow: 2;
     @include basic-container;
 }
 
 .sideContent {
-    flex-basis: 300px;
+    flex-basis: 200px;
     @include basic-container;
 }

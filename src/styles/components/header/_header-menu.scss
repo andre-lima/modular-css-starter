@@ -4,20 +4,6 @@
 
 .header-menuLinks {
   @include menu;
-  // @include flex;
-  // // @include symetric-wrap(6, 150px, 5px);
-
-  // & > li {
-  //   text-align: center;
-  //   flex-basis: 150px;
-  //   // @include border(3px);
-  //   // @include grid-column(1, 5, 150px);
-
-  //   @include mq(tablet, max) {
-  //     // Trigger hamburger menu
-  //   }
-  // }
-
 }
 
 .header-link_alignedRight {
@@ -27,27 +13,17 @@
 }
 
 .header-link_hasSubMenu {
-  // position: relative;
-  // &:hover {
-  //   & > ul {
-  //     display: block;
-  //   }
-  // }
   @include has-dropdown();
 }
 
 .subMenu {
-  // @include absolute($left: 25px);
-  // @include colors(#eee, #111);
-  // @include z-index(dropdown);
-  
-  // display: none;
+  @include colors(#eee, #111);
 
-  // & > li {
-  //   padding: $space-xxs $space-md;
-  //   & > * {
-  //     display: block;
-  //   }
-  // }
+  & > li {
+    padding: $space-xxs $space-md;
+    & > * {
+      display: block;
+    }
+  }
   
 }

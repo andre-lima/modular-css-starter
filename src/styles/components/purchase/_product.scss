@@ -38,5 +38,7 @@
 
 .product-buyButton {
     margin-left: $space-sm-fixed;
-    @include button(regular);
+    @include button(regular, info) {
+        @include round;
+    };
 }
