@@ -94,3 +94,12 @@ h4, p, button, .text--md {
 p {
   line-height: $body-line-height;
 }
+
+// Usually, bottom margin will mess things up, like a component flow.
+// But when we need text to behave like actual text (e.g like in an longer article) we can reapply some bototm padding
+// based on its font-size (ems).
+@mixin text-spacing ($spacing: $space-xs) {
+  & > * {
+    margin-bottom: $spacing;
+  }
+}

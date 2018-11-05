@@ -19,16 +19,22 @@
 
 .panelItems {
     @include basic-container ($padding: $space-xxs, $distance-from-sibling: 0);
-    @include flex($jc: space-around, $ai: center);
 }
 
 // -------------------------------------
 // Typography
 // -------------------------------------
+.typography {
+    @include text-spacing ($space-sm);
+}
 
 // -------------------------------------
 // Buttons
 // -------------------------------------
+.buttons {
+    @include flex ($jc: space-around, $ai: center);
+}
+
 .button {
     & {
         @include button;
@@ -51,15 +57,6 @@
     }
     &_warning {
         @include button ($style: warning);
-    }
-}
-
-// -------------------------------------
-//Container
-// -------------------------------------
-.basicContainer {
-    @include basic-container ($distance-from-sibling: $space-xs) {
-        @include border($radius: 0);
     }
 }
 
@@ -93,6 +90,13 @@
 // -------------------------------------
 // Widget and Arrow
 // -------------------------------------
+.widgets {
+    // @include flex ($jc: center, $ai: center);
+}
+.item_hasWidget {
+    display: inline-block;
+    margin: 0 $space-xl;
+}
 .widget {
     margin-top: 15px;
     @include arrow('top','center', 10px, #000);
@@ -100,6 +104,25 @@
 
 .widget_clip {
     @include arrow-mask;
+}
+
+// -------------------------------------
+//Container
+// -------------------------------------
+.basicContainer {
+    @include basic-container ($distance-from-sibling: $space-xs, $max-width: 500px) {
+        @include border($radius: 0);
+    }
+}
+
+// -------------------------------------
+// Container with limited height
+// -------------------------------------
+.limitedContainer {
+    @include basic-container ($distance-from-sibling: $space-lg, $max-width: 500px) {
+        @include border($radius: 0);
+    }
+    @include limited-container ($height: 200px);
 }
 
 // -------------------------------------

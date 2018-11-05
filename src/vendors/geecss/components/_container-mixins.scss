@@ -1,9 +1,17 @@
-@mixin basic-container ($padding: $component-padding, $distance-from-sibling: $space-xs) {
+@mixin basic-container($padding: $component-padding, $max-width: null, $distance-from-sibling: $space-xs) {
   padding: $padding;
+  max-width: $max-width;
   
   & > *:not(:last-child) {
     margin-bottom: $distance-from-sibling;
   }
+
+  @content;
+}
+
+@mixin limited-container($height: 100px) {
+  height: $height;
+  overflow-y: scroll;
 
   @content;
 }
