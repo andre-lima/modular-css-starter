@@ -1,15 +1,23 @@
-.productsCarousel {
+.purchasePanel-header {
+    @include panel-header ($bg-color: $blue, $spacing: 0.75em) {
+        &:after {
+            content: "extra header content";
+        }
+    }
+}
+
+.purchasePanel-productsCarousel {
     @include flex($child-grow: 1);
+    // padding: $space-xs;
     & > * {
         flex-basis: 300px;
     }
-    @include blocks-container;
+    @include blocks-container ($margin-between-children: $space-xxs);
 }
 
 .product {
-    margin: $space-xxs;
+    // margin: $space-xxs;
     padding: $space-xs;
-    @include add-gap;
     @include colors($bg-color: $silver);
     @include flex($direction: column, $jc: space-between);
 }

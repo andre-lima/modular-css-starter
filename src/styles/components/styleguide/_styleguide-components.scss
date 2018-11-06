@@ -114,29 +114,36 @@
     }
 }
 
+// -------------------------------------
+// Container with negative margins
+// -------------------------------------
 .blocksContainer {
-    @include blocks-container ($margin: $component-padding) {
-        padding: $component-padding;
-        max-width: 500px;
-        @include flex;
+    @include border($radius: 0);
+    max-width: 500px;
+}
+
+.blocksContainer-blocks {
+    @include blocks-container ($margin-between-children: $space-xxs) {
+        @include flex ($child-grow: 1);
     }
 
-    div {
-        @include colors(#fff, #500300);
-        padding: $component-padding;
-        margin: $component-padding;
-    }
+}
+
+.block {
+    @include colors(#fff, #d40504);
+    padding: $component-padding;
+    text-align: center;
 }
 
 // -------------------------------------
 // Container with limited height
 // -------------------------------------
 .limitedContainer {
-    @include basic-container ($distance-from-sibling: $space-lg) {
+    @include basic-container ($distance-from-sibling: $space-md) {
         @include border($radius: 0);
         max-width: 500px;
     }
-    @include limited-container ($height: 200px);
+    @include limited-container ($height: 150px);
 }
 
 // -------------------------------------

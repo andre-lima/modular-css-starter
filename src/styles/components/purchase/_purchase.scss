@@ -1,10 +1,4 @@
-.purchase_homePage {
-    @include panel ($bg-color: $blue, $spacing: $space-xs) {
-        color: $white;
-        &:after {
-            content: "style rest of content here";
-        }
-    }
+.purchasePanel_homePage {
     @include border ($radius: 0);
     @include push-next-down;
 }
