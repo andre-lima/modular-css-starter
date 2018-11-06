@@ -29,6 +29,18 @@
 }
 
 // -------------------------------------
+// Truncated text
+// -------------------------------------
+.truncated p {
+    font-size: 18px;
+    @include truncate (225px);
+}
+.gradient p {
+    font-size: 18px;
+    @include truncate ($limit: 255px, $gradient-color: #fff);
+}
+
+// -------------------------------------
 // Buttons
 // -------------------------------------
 .buttons {

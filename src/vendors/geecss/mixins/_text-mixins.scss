@@ -1,7 +1,20 @@
-@mixin truncate($truncation-boundary) {
-  max-width: $truncation-boundary;
+@mixin truncate($limit, $gradient-color: null) {
+  max-width: $limit;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
-  // ellipsis or add white transparency
+
+  @if ($gradient-color) {
+    position: relative;
+
+    &:after {
+      content: "";
+      @include absolute($top: 0, $right: 0);
+      width: 50px;
+      height: 100%;
+      background: linear-gradient(to right, rgba($gradient-color, 0), $gradient-color 60%)
+    }
+  } @else {
+    text-overflow: ellipsis;
+  }
+
 }
