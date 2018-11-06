@@ -108,8 +108,23 @@
 //Container
 // -------------------------------------
 .basicContainer {
-    @include basic-container ($distance-from-sibling: $space-xs, $max-width: 500px) {
+    @include basic-container ($distance-from-sibling: $space-xs) {
+        max-width: 500px;
         @include border($radius: 0);
+    }
+}
+
+.blocksContainer {
+    @include blocks-container ($margin: $component-padding) {
+        padding: $component-padding;
+        max-width: 500px;
+        @include flex;
+    }
+
+    div {
+        @include colors(#fff, #500300);
+        padding: $component-padding;
+        margin: $component-padding;
     }
 }
 
@@ -117,8 +132,9 @@
 // Container with limited height
 // -------------------------------------
 .limitedContainer {
-    @include basic-container ($distance-from-sibling: $space-lg, $max-width: 500px) {
+    @include basic-container ($distance-from-sibling: $space-lg) {
         @include border($radius: 0);
+        max-width: 500px;
     }
     @include limited-container ($height: 200px);
 }

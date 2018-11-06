@@ -1,9 +1,9 @@
 .productsCarousel {
-    @include flex;
+    @include flex($child-grow: 1);
     & > * {
         flex-basis: 300px;
-        flex-grow: 1;
     }
+    @include blocks-container;
 }
 
 .product {
