@@ -22,10 +22,16 @@
     <div class="typography">
       <h1>H1 title</h1>
       <h2>Then a H2 subtitle</h2>
-      <p>Some text here to show you how a paragraph looks like. Some text here to show you how a paragraph looks like. Some text here to show you how a paragraph looks like. Some text here to show you how a paragraph looks like. Some text here to show you how a paragraph looks like.</p>
-      <p>Try it again but make it longer this time. Try it again but make it longer this time. Try it again but make it longer this time. Try it again but make it longer this time. Try it again but make it longer this time. Try it again but make it longer this time. Try it again but make it longer this time. Try it again but make it longer this time.</p>
+      <p>Some text here to show you how a paragraph looks like. Some text here to show you how a paragraph looks like.
+        Some text here to show you how a paragraph looks like. Some text here to show you how a paragraph looks like.
+        Some text here to show you how a paragraph looks like.</p>
+      <p>Try it again but make it longer this time. Try it again but make it longer this time. Try it again but make it
+        longer this time. Try it again but make it longer this time. Try it again but make it longer this time. Try it
+        again but make it longer this time. Try it again but make it longer this time. Try it again but make it longer
+        this time.</p>
       <h3>Now a h3 heading...</h3>
-      <p>And closing up with another paragraph. And closing up with another paragraph. And closing up with another paragraph.</p>
+      <p>And closing up with another paragraph. And closing up with another paragraph. And closing up with another
+        paragraph.</p>
     </div>
   </div>
 
@@ -71,30 +77,32 @@
   </div>
 
   <div class="container">
-      <div class="panelTitle">Container with negative margins</div>
-      <div class="blocksContainer">
-        <div class="blocksContainer-blocks">
-          <div class="block">these</div>
-          <div class="block">blocks have</div>
-          <div class="block">equal gaps</div>
-          <div class="block">but they</div>
-          <div class="block">are still</div>
-          <div class="block">aligned</div>
-          <div class="block">to</div>
-          <div class="block">their</div>
-          <div class="block">parent</div>
-          <div class="block">no matter</div>
-          <div class="block">how they</div>
-          <div class="block">wrap</div>
-        </div>
+    <div class="panelTitle">Container with negative margins</div>
+    <div class="blocksContainer">
+      <div class="blocksContainer-blocks">
+        <div class="block">these</div>
+        <div class="block">blocks have</div>
+        <div class="block">equal gaps</div>
+        <div class="block">but they</div>
+        <div class="block">are still</div>
+        <div class="block">aligned</div>
+        <div class="block">to</div>
+        <div class="block">their</div>
+        <div class="block">parent</div>
+        <div class="block">no matter</div>
+        <div class="block">how they</div>
+        <div class="block">wrap</div>
       </div>
     </div>
+  </div>
 
   <div class="container">
     <div class="panelTitle">Limited height text</div>
     <div class="limitedContainer">
       <h1>You have to scroll me</h1>
-      <p>Salami incididunt eiusmod sunt ham hock ball tip. Jerky bresaola ball tip flank porchetta doner quis drumstick lorem magna baconzitos spare ribs mollit aute commodo. Alcatra esse short ribs, picanha salami officia gato frito elit sausage velit.</p>
+      <p>Salami incididunt eiusmod sunt ham hock ball tip. Jerky bresaola ball tip flank porchetta doner quis drumstick
+        lorem magna baconzitos spare ribs mollit aute commodo. Alcatra esse short ribs, picanha salami officia gato
+        frito elit sausage velit.</p>
       <p>have bottom margins</p>
       <p>for spacing purposes!</p>
       <p>Cool, right?</p>
@@ -150,14 +158,43 @@
   <div class="container">
     <div class="panelTitle">Accordion</div>
     <div class="accordion">
-      Accordion
+
+      <div class="accordionItem">
+
+        <input class="accordion-toggle" id="toggle1" type="checkbox" name="toggle" />
+        <label class="accordion-title" for="toggle1">Click to open</label>
+        <section class="accordion-content" id="content1">
+          <p><span>Lorem ipsum dolor sit ametit. Ab ea veritatis cumque unde dolore quasi hic
+              praesentium, in consequatur, incidunt alias iure illum facilis qui odit excepturi tenetur, error
+              eligendiOfficia?</span></p>
+        </section>
+      </div>
+
+      <div class="accordionItem">
+        <input class="accordion-toggle" id="toggle2" type="checkbox" name="toggle" />
+        <label class="accordion-title" for="toggle2">Click to open</label>
+        <section class="accordion-content" id="content2">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem tempora quia fugit eveniet nostrum amet
+            quod
+            aliquid repellendus sint. Adipisci voluptas ratione doloremque delectus vel nemo cumque autem beatae minus.</p>
+        </section>
+      </div>
+
+      <div class="accordionItem">
+        <input class="accordion-toggle" id="toggle3" type="checkbox" name="toggle" />
+        <label class="accordion-title" for="toggle3">Click to open</label>
+        <section class="accordion-content" id="content3">
+          <img src="http://placekitten.com/500/150" alt="" />
+        </section>
+      </div>
+
     </div>
   </div>
 
   <div class="container">
     <div class="panelTitle">Modal</div>
     <div class="panelItems">
-        <button class="modal-openButton">Open modal</button>
+      <button class="modal-openButton">Open modal</button>
     </div>
   </div>
 
@@ -167,12 +204,11 @@
     <div class="modal-content">
       <h1 class="modal-title">Let's eat beican!</h1>
       <p class="modal-description">Salami incididunt eiusmod sunt ham hock ball tip. Jerky bresaola ball tip flank
-          porchetta doner quis drumstick lorem magna baconzitos spare ribs mollit aute commodo. Alcatra esse short
-          ribs, picanha salami officia gato frito elit sausage velit.</p>
+        porchetta doner quis drumstick lorem magna baconzitos spare ribs mollit aute commodo. Alcatra esse short
+        ribs, picanha salami officia gato frito elit sausage velit.</p>
       <button class="modal-closeButton">Close modal</button>
     </div>
   </section>
-
   <!--  -->
 
   <script src="scripts/stylesheet.js"></script>

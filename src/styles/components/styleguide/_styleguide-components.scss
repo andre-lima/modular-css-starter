@@ -45,6 +45,9 @@
 // -------------------------------------
 .buttons {
     @include flex ($jc: space-around, $ai: center);
+    & > * {
+        margin: $space-xxs;
+    }
 }
 
 .button {
@@ -87,14 +90,6 @@
     }
 }
 
-.item_hasWidget {
-    @include has-dropdown($horizontally-center-dropdown: true);
-
-    span {
-        font-style: italic;
-    }
-}
-
 .dropdown {
     @include basic-container;
     @include colors(#fff, #111);
@@ -104,6 +99,7 @@
 // Widget and Arrow
 // -------------------------------------
 .item_hasWidget {
+    @include has-dropdown($horizontally-center-dropdown: true);
     display: inline-block;
     margin: 0 $space-xl;
 }
@@ -179,12 +175,30 @@
 }
 
 // -------------------------------------
+// Accordion
+// -------------------------------------
+.accordion {
+    @include accordion ($content-height: auto);
+    max-width: 500px;
+}
+
+.accordion-title {
+    @include colors(#fff, #d40504);
+    padding: $space-xs;
+    border-bottom: 1px solid white;
+}
+
+// -------------------------------------
 // Modal
 // -------------------------------------
 .testModal {
     @include modal($has-overlay: true, $max-width: 500px, $modal-padding: $space-md) {
         @include basic-container ($padding: null, $distance-from-sibling: $space-xs);
     }
+}
+
+.modal-content {
+    font-size: $text-sm;
 }
 
 .modal-openButton {
