@@ -39,8 +39,7 @@
       @include z-index(dropdown);
 
       @if($horizontally-center-dropdown) {
-        left: 50%;
-        transform: translateX(-50%);
+        @include horizontal-center-element;
       }
     }
   }
