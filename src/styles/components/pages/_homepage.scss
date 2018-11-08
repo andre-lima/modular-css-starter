@@ -1,12 +1,14 @@
 .pageContent {
     @include flex($child-grow: 1);
     @include push-next-down;
+    max-width: 1300px;
+    @include center-block;
 }
 
 .mainContent {
     flex-basis: 1000px;
     flex-grow: 2;
-    @include basic-container;
+    @include basic-container($distance-from-sibling: $space-md);
 }
 
 .sideContent {

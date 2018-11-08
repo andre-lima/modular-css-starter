@@ -2,7 +2,7 @@
   padding: $padding;
     
   & > *:not(:last-child) {
-    margin-bottom: $distance-from-sibling;
+    @include push-next-down($distance-from-sibling);
   }
 
   @content;
