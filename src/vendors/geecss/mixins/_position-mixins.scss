@@ -64,13 +64,14 @@
 }
 
 @mixin vertical-center-element {
-  left: 50%;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 @mixin center-element {
-  @include horizontal-center-element;
-  @include vertical-center-element;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @mixin equal-height() {

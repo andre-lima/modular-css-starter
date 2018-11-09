@@ -22,6 +22,18 @@ $button-colors: (
     "warning" :  ($button-warning-color $button-warning-bg)
 ) !default;
 
+// Checkbox variables
+$checkbox-mark-content: "x";
+$checkbox-size: 20px;
+$checkmark-size: 18px;
+$checkbox-bg-color: #aaa;
+$checkbox-bg-color-hover: darken($checkbox-bg-color, 10%);
+$checkbox-bg-color-selected: #ff4136;
+$checkbox-bg-color-selected-hover: darken($checkbox-bg-color-selected, 10%);
+$checkbox-mark-color: #fff;
+$checkbox-border-size: 0px;
+$checkbox-border-color: #000;
+
 // Links variables
 
 

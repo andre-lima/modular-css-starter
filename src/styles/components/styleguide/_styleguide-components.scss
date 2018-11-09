@@ -208,3 +208,32 @@
 .modal-closeButton {
     @include button ($size: regular, $style: warning);
 }
+
+// -------------------------------------
+// Checkbox
+// -------------------------------------
+.checkboxes {
+    @include basic-container ($padding: $space-xs, $distance-from-sibling: $space-xs);
+}
+.checkbox {
+    @include checkbox();
+    
+    &_heart {
+        @include checkbox($size: 20px, $checkmark: '\e9da', $custom-font: 'icons');
+    }
+    
+    &_svg {
+        @include checkbox($size: 24px, $checkmark: url('../images/svg/close-button.svg'));
+    }
+
+    &_custom {
+        @include checkbox($size: 28px, $checkmark: " ") {
+            width: 50%;
+            height: 50%;
+            background-color: $checkbox-mark-color;
+            transform: rotate(45deg);
+            @include border;
+            @include absolute($top: 6px, $left: 7px);
+        }
+    }
+}
