@@ -23,7 +23,7 @@ $button-colors: (
 ) !default;
 
 // Checkbox variables
-$checkbox-mark-content: "x";
+$checkbox-mark-content: " ";
 $checkbox-size: 20px;
 $checkmark-size: 18px;
 $checkbox-bg-color: #aaa;
@@ -33,6 +33,7 @@ $checkbox-bg-color-selected-hover: darken($checkbox-bg-color-selected, 10%);
 $checkbox-mark-color: #fff;
 $checkbox-border-size: 0px;
 $checkbox-border-color: #000;
+$checkbox-border-radius: 3px;
 
 // Links variables
 
