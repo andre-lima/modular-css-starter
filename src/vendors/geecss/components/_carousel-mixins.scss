@@ -1,11 +1,15 @@
 
-@mixin carousel ($imageUrl) {
-  position: relative;
-  background-image: url("http://placekitten.com/1050/240");
-  background-size: cover;
-  background-position: center;
+@mixin carousel ($height: $carousel-height, $imageUrl: null) {
+  @include relative;
+
+  @if ($imageUrl) {
+    background-image: url($imageUrl);
+    background-size: cover;
+    background-position: center;
+  }
+
   width: 100%;
-  height: 250px;
+  height: $height;
 
   @content;
 }

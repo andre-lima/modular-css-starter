@@ -1,8 +1,8 @@
-@mixin checkbox($size: $checkbox-size, $custom-checkmark: $checkbox-mark-content, $custom-font: null) {
+@mixin checkbox($box-size: $checkbox-size, $mark-size: $checkbox-mark-size, $custom-checkmark: $checkbox-mark-content, $custom-font: null) {
   position: relative;
   cursor: pointer;
   user-select: none;
-  padding-left: $size + 5px;
+  padding-left: $box-size + 5px;
   $is-custom: false;
 
   @if ($custom-checkmark != " ") {
@@ -10,7 +10,7 @@
   }
 
   input {
-    position: absolute;
+    @include absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
@@ -19,8 +19,8 @@
 
   span {
     @include absolute($top: 0, $left: 0);
-    height: $size;
-    width: $size;
+    height: $box-size;
+    width: $box-size;
     background-color: $checkbox-bg-color;
     border-radius: $checkbox-border-radius;
     @if ($checkbox-border-size != 0) {

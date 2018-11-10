@@ -74,6 +74,11 @@
   transform: translate(-50%, -50%);
 }
 
+@mixin hide-element {
+  position: absolute;
+  left: -9999px;
+}
+
 @mixin equal-height() {
   // Create mixin
 }

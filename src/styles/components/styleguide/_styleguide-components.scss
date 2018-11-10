@@ -158,7 +158,7 @@
 // Carousel
 // -------------------------------------
 .carousel {
-    @include carousel("http://placekitten.com/1050/240") {
+    @include carousel($imageUrl: "http://placekitten.com/1050/240") {
         @include flex(flex-start, center);
     }
 }
@@ -219,18 +219,27 @@
     @include checkbox();
     
     &_heart {
-        @include checkbox($size: 22px, $custom-checkmark: '\e9da', $custom-font: 'icons');
+        @include checkbox($box-size: 22px, $custom-checkmark: '\e9da', $custom-font: 'icons');
     }
     
     &_svg {
-        @include checkbox($size: 24px, $custom-checkmark: url('../images/svg/close-button.svg'));
+        @include checkbox($box-size: 24px, $custom-checkmark: url('../images/svg/close-button.svg'));
     }
 
     &_custom {
-        @include checkbox($size: 28px) {
+        @include checkbox($box-size: 28px) {
             transform: rotate(45deg);
             @include border;
             @include absolute($top: 6px, $left: 7px);
         }
     }
+}
+
+// -------------------------------------
+// Radio buttons
+// -------------------------------------
+
+
+.radioBtn {
+    @include radio() ;
 }
