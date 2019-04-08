@@ -54,6 +54,10 @@
 
 }
 
+@mixin vertical-center-children () {
+  align-items: center;
+}
+
 @mixin center-children-flex {
   @include flex($jc: center, $ai: center);
 }

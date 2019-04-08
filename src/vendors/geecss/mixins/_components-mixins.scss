@@ -71,10 +71,6 @@
   //only wrap pairs
 }
 
-@mixin vertical-center-children () {
-  align-items: center;
-}
-
 @mixin border($width: 1px, $color: black, $type: solid, $radius: $default-border-radius) {
   border: make-border($width, $color, $type);
   border-radius: $radius;
