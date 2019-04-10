@@ -21,8 +21,6 @@
   
     @if $has-overlay {
       background-color: $default-modal-overlay;
-    } @else {
-      pointer-events: none;
     }
     
     // Modal content
@@ -30,6 +28,7 @@
       max-width: $max-width;
       padding: $modal-padding;
       box-shadow: $default-modal-shadow;
+      background-color: white;
       @content;
     }
 
