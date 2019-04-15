@@ -1,6 +1,6 @@
 .footer {
     @include colors($text-color: $white, $bg-color: $bg-footer);
-    @include flex($ai: center, $direction: column, $child-grow: 1);
+    @include flex($align: center, $direction: column, $child-grow: 1);
     @include basic-container;
 
     & > * {
@@ -12,7 +12,7 @@
 
 %flex-ul {
     ul {
-        @include flex($jc: space-around);
+        @include flex($justify: space-around);
     }
 }
 

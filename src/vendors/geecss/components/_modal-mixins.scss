@@ -12,7 +12,7 @@
     }
     
     @include fixed($top: 0, $left: 0);
-    @include center-children-flex;
+    @include center-flex-children;
     @include z-index(modal);
     
     font-size: inherit;

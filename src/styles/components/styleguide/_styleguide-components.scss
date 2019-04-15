@@ -44,7 +44,7 @@
 // Buttons
 // -------------------------------------
 .buttons {
-    @include flex ($jc: space-around, $ai: center);
+    @include flex ($justify: space-around, $align: center);
     & > * {
         margin: $space-xxs;
     }
@@ -134,7 +134,6 @@
     @include blocks-container ($margin-between-children: $space-xxs) {
         @include flex ($child-grow: 1);
     }
-
 }
 
 .block {

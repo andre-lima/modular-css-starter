@@ -26,13 +26,6 @@
   @include position(fixed, $args...);
 }
 
-@mixin center-block {
-  margin: { 
-    left: auto;
-    right: auto;
-  }
-}
-
 @mixin z-index($arg) {
   z-index: z($arg);
 }
@@ -41,43 +34,70 @@
   margin-bottom: $spacing-bottom;
 }
 
-@mixin flex($jc: null, $ai: null, $wrap: wrap, $direction: null, $child-grow: null) {
+@mixin flex($justify: null, $align: null, $wrap: wrap, $direction: null, $child-grow: null) {
   display: flex;
   flex-wrap: $wrap;
-  justify-content: $jc;
-  align-items: $ai;
+  justify-content: $justify;
+  align-items: $align;
   flex-direction: $direction;
 
   & > * {
-    flex-grow: $child-grow;
+    @include flex-child($grow: $child-grow);
   }
 
 }
 
-@mixin vertical-center-children () {
+@mixin flex-child($grow: 1, $basis: null, $shrink: null, $order: null, $align: null) {
+  flex-grow: $grow;
+  flex-basis: $basis;
+  flex-shrink: $shrink;
+  order: $order;
+  align-self: $align;
+}
+
+// Centering a block element
+@mixin center-block {
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
+// Applied to the flex parent
+@mixin vertical-center-flex-children () {
   align-items: center;
 }
 
-@mixin center-children-flex {
-  @include flex($jc: center, $ai: center);
+// Applied to the flex parent
+@mixin center-flex-children {
+  @include flex($justify: center, $align: center);
 }
 
+// Applied to absolute positioned children
 @mixin horizontal-center-element {
   left: 50%;
   transform: translateX(-50%);
 }
 
+// Applied to absolute positioned children
 @mixin vertical-center-element {
   top: 50%;
   transform: translateY(-50%);
 }
 
+// Applied to absolute positioned children
 @mixin center-element {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
+// Completely hidden
+@mixin remove-element {
+  display: none !important;
+}
+
+// Readable with screen readers and focusable
 @mixin hide-element {
   position: absolute;
   left: -9999px;
